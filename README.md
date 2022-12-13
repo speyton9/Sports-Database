@@ -1,6 +1,14 @@
 # Sports-Database
 Make your own basic sports database using python, selenium, and sqlite3
 
+**RECENT UPDATES 12/13/2022**
+Added a few features for NBA:
+Player Correlation Report - Looks at players who average over 14 minutes per game and returns a CSV of players with a negative correlation of -.3 or worse
+Defense vs Position(DVP) - Returns report of points allowed by team for each position
+Player Usage Table - Collects position each player plays and how much they play of each position. Needed for DVP report.
+Per Game Stats Table - Collects average stats for each player on per game level. Needed for correlation report.
+I added these option in the main menu however plan to clean this up further as it is currently set up solely for functionality.
+
 Currently supports NBA and NHL.
 
 I made this as a project to learn more about OOP, python, selenium, and SQL. While I made this with the novices in mind, it wouldn't hurt to learn more 
