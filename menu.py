@@ -1,11 +1,14 @@
 from db import DB
 from NHL_scraper import NHLScraper
 from NBA_scraper import NBAScraper
+from NFL_scraper import NFLScraper
+from nba_db import NbaDb
 
 
 def start_up(run=True):
     if run:
-        print('Welcome! What would you like to do? \n1: update stats \n2: search stats\n3: Quit')
+        print('Welcome! What would you like to do? \n1: update stats \n2: search stats\n3: Quit\n5: NBA Correlations\n6: '
+              'Player Usage Stats\n7: DvP Report\n8: Per Game Stats')
         task = int(input())
         main_task(task)
 
@@ -36,6 +39,21 @@ def main_task(task):
                 query(select, x)
     elif task == 3:
         start_up(False)
+    elif task == 4:
+        nhlPA = DB()
+        nhlPA.match()
+    elif task == 5:
+        nbaCorr = NbaDb()
+        nbaCorr.correlation()
+    elif task == 6:
+        nbaScrape = NBAScraper()
+        nbaScrape.scrape_pbp('PBP')
+    elif task == 7:
+        nbadvp = NbaDb()
+        nbadvp.dvp()
+    elif task == 8:
+        nbaScrape = NBAScraper()
+        nbaScrape.scrape_perGame('perGame')
 
 
 def sport_select(sport):
